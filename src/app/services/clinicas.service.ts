@@ -7,7 +7,7 @@ import { Clinica } from '../types/Clinica';
   providedIn: 'root'
 })
 export class ClinicasService {
-  private apiUrl = 'http:lovalhost:3000/clinicas'
+  private apiUrl = 'http://localhost:3000/clinicas'
 
   constructor(private http: HttpClient) { }
 
