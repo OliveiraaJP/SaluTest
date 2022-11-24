@@ -19,6 +19,23 @@
       <mat-icon aria-hidden="false" aria-label="Status icon">{{clinica.status | status}}</mat-icon>
     </td>
   </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="accent" aria-label="Adicionar uma clinica">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let clinica">
+      <button mat-icon-button color="accent" aria-label="Editar uma clinica">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-icon-button color="accent" aria-label="Remover uma clinica">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
