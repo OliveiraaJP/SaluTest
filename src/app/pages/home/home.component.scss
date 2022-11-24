@@ -1,18 +1,8 @@
-div{
-    &.listbox{
-        overflow-y: auto;
-    }
-
-    &.cinza{
-        background-color: #c1c1c6;
-        padding: 15px
-    }
-
-    &.branco{
-        padding: 15px
-    }
-}    
-
 table {
-    width: 95%;
+    width: 100%;
+}
+
+.border{
+    height: 4em;
+    border-bottom: 1px solid black;
 }

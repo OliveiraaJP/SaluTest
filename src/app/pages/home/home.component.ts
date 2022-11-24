@@ -10,7 +10,7 @@ import { Clinica } from 'src/app/types/Clinica';
 export class HomeComponent implements OnInit {
 
   clinicas$: Clinica[] = [];
-  displayedColumns: string[] = ['nome', 'especialidade', 'endereço', 'status', 'actions'];
+  displayedColumns: string[] = ['nome', 'especialidade', 'endereço', 'status', 'horário', 'actions'];
 
 
   constructor(private clinicasService: ClinicasService) {
