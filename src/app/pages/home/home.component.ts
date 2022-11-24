@@ -9,9 +9,11 @@ import { Clinica } from 'src/app/types/Clinica';
 })
 export class HomeComponent implements OnInit {
 
-  clinicas: Clinica[] = []
+  clinicas$: Clinica[] = [];
+  displayedColumns: string[] = ['nome', 'especialidade', 'endereço'];
 
-  constructor(private clinicasService: ClinicasService) { 
+
+  constructor(private clinicasService: ClinicasService) {
     this.getClinicas();
   }
 
@@ -19,7 +21,7 @@ export class HomeComponent implements OnInit {
   }
 
   getClinicas(): void {
-    this.clinicasService.getAll().subscribe((clinicasResponse) => this.clinicas = clinicasResponse);
+    this.clinicasService.getAll().subscribe((clinicasResponse) => this.clinicas$ = clinicasResponse);
   }
 
 }
