@@ -1,0 +1,14 @@
+div{
+    &.listbox{
+        overflow-y: auto;
+    }
+
+    &.cinza{
+        background-color: #c1c1c6;
+        padding: 15px
+    }
+
+    &.branco{
+        padding: 15px
+    }
+}    

@@ -1,1 +1,7 @@
-<p>home works!</p>
+<div class="listbox">
+    <div *ngFor="let clinica of clinicas; let i = index">
+        <div *ngIf="i % 2 === 0" class="branco">Nome: {{clinica.nome}} | Especialidade: {{clinica.especialidade}} | Preço: {{clinica["preço"].toFixed(2)}}</div>
+        <div *ngIf="i % 2 !== 0" class="cinza">Nome: {{clinica.nome}} | Especialidade: {{clinica.especialidade}} | Preço: {{clinica["preço"].toFixed(2)}}</div>
+        
+    </div>
+</div>
