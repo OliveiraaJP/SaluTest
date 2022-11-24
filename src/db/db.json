@@ -68,7 +68,7 @@
             "numero": 394,
             "bairro": "Cambaratiba",
             "cidade": "Cambaratiba",
-            "estado": "sp",
+            "estado": "SP",
             "status": "ativo",
             "preço": 147.85,
             "atendimento": {
@@ -87,7 +87,7 @@
             "numero": 12,
             "bairro": "Jardim Moreno",
             "cidade": "São Paulo",
-            "estado": "São Paulo",
+            "estado": "SP",
             "status": "Sp",
             "preço": 175,
             "atendimento": {
@@ -106,7 +106,7 @@
             "numero": 25,
             "bairro": "Praia Azul",
             "cidade": "São Paulo",
-            "estado": "sp",
+            "estado": "SP",
             "status": "Ativo",
             "preço": 200,
             "atendimento": {
