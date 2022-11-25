@@ -25,21 +25,23 @@
       {{clinica.atendimento. inicio}} - {{clinica.atendimento.fim}}
     </td>
   </ng-container>
-
   <ng-container matColumnDef="actions">
-    <mat-header-cell *matHeaderCellDef class="border">
+    <th mat-header-cell *matHeaderCellDef>
       <button mat-icon-button color="accent" aria-label="Adicionar uma clinica">
         <mat-icon>add</mat-icon>
       </button>
-    </mat-header-cell>
-    <mat-cell *matCellDef="let clinica" class="border">
+    </th>
+    <td mat-cell *matCellDef="let clinica">
       <button mat-icon-button color="accent" aria-label="Editar uma clinica">
         <mat-icon>edit</mat-icon>
       </button>
-      <button mat-icon-button color="accent" aria-label="Remover uma clinica">
+      <button *ngIf="clinica.status.toLowerCase() === 'ativo'" (click)="deleteClinica(clinica)" mat-icon-button color="warn" aria-label="Remover uma clinica">
         <mat-icon>delete</mat-icon>
       </button>
-    </mat-cell>
+      <button *ngIf="clinica.status.toLowerCase() !== 'ativo'" (click)="activeClinica(clinica)" mat-icon-button color="primary" aria-label="Remover uma clinica">
+        <mat-icon>update</mat-icon>
+      </button>
+    </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
