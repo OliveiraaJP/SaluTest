@@ -21,7 +21,7 @@ export class ClinicasService {
     return this.http.put<any>(this.apiUrl + `/${clinica.id}`, body);
   }
 
-  postClinica(clinica: Clinica): Observable<Clinica>{
+  postClinica(clinica: any): Observable<Clinica>{
     return this.http.post<Clinica>(this.apiUrl, clinica)
   }
 

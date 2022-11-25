@@ -22,7 +22,7 @@
         matInput
         formControlName="telefone"
         name="telefone"
-        type="number"
+        type="text"
         required minlength="8"
       />
     </mat-form-field>
@@ -43,16 +43,20 @@
       <input matInput formControlName="cidade" name="cidade" required minlength="1"/>
     </mat-form-field>
     <mat-form-field class="input">
+      <mat-label>Estado</mat-label>
+      <input matInput formControlName="estado" name="estado" required minlength="1"/>
+    </mat-form-field>
+    <mat-form-field class="input">
       <mat-label>Preço</mat-label>
       <input matInput formControlName="preço" name="preço" type="number"  required minlength="1"/>
     </mat-form-field>
     <mat-form-field class="input">
       <mat-label>Hora inicio</mat-label>
-      <input matInput formControlName="horaInicio" name="horaInicio" #time  required minlength="4"/>
+      <input matInput formControlName="inicio" name="inicio" #time  required minlength="4"/>
     </mat-form-field>
     <mat-form-field class="input">
       <mat-label>Hora fim</mat-label>
-      <input matInput formControlName="horaFim" name="horaFim" #time  required minlength="4"/>
+      <input matInput formControlName="fim" name="fim" #time  required minlength="4"/>
     </mat-form-field>
 
     <div mat-dialog-actions>

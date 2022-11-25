@@ -27,10 +27,12 @@ export class CreateDialogComponent implements OnInit {
       numero: ['', [Validators.required]],
       bairro: ['', [Validators.required]],
       cidade: ['', [Validators.required]],
+      estado:['', [Validators.required]],
       status: ['Ativo', [Validators.required]],
       preço: ['', [Validators.required]],
-      horaInicio: ['', [Validators.required]],
-      horaFim: ['', [Validators.required]]
+      inicio: ['', [Validators.required]],
+      fim: ['', [Validators.required]]
+      
 
     });
   }
@@ -41,10 +43,17 @@ export class CreateDialogComponent implements OnInit {
   }
 
   addClinica() {
-    console.log(this.clinicaForm.value);
-    this.clinicaService.postClinica(this.clinicaForm.value).subscribe(result => console.log(result));
+    const body = this.fb.group({
+      ...this.clinicaForm.value,
+      atendimento:{
+        inicio: this.clinicaForm.get('inicio')?.value,
+        fim: this.clinicaForm.get('fim')?.value
+      }
+    })
+    this.clinicaService.postClinica(body.value).subscribe(result => console.log(result));
     this.dialogRef.close();
     this.clinicaForm.reset();
+    window.location.reload();
   }
 
 }
