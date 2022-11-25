@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { ClinicasService } from 'src/app/services/clinicas.service';
 import { Clinica } from 'src/app/types/Clinica';
 
@@ -9,7 +10,7 @@ import { Clinica } from 'src/app/types/Clinica';
 })
 export class HomeComponent implements OnInit {
 
-  clinicas$: Clinica[] = [];
+  clinicas$!: MatTableDataSource<Clinica>;
   displayedColumns: string[] = ['nome', 'especialidade', 'endereço', 'status', 'horário', 'actions'];
 
 
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
   }
 
   getClinicas(): void {
-    this.clinicasService.getAll().subscribe((clinicasResponse) => this.clinicas$ = clinicasResponse);
+    this.clinicasService.getAll().subscribe((clinicasResponse) => this.clinicas$ = new MatTableDataSource(clinicasResponse));
   }
 
   deleteClinica(clinica: Clinica): void{
@@ -32,5 +33,10 @@ export class HomeComponent implements OnInit {
   activeClinica(clinica:Clinica): void{
     const bool = window.confirm('Deseja abrir a clinica de novo?');
     if(bool) this.clinicasService.active(clinica).subscribe((response) => console.log(response));
+  }
+
+  applyFilter($event: Event){
+    const filterCLinicas = ($event.target as HTMLInputElement).value;
+    this.clinicas$.filter = filterCLinicas.trim().toLowerCase()
   }
 }
