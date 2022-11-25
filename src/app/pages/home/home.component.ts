@@ -25,12 +25,12 @@ export class HomeComponent implements OnInit {
   }
 
   deleteClinica(clinica: Clinica): void{
-    const bool = window.confirm();
+    const bool = window.confirm('Deseja tornar a clinica inativa?');
     if(bool) this.clinicasService.delete(clinica).subscribe((response) => console.log(response));
   }
 
   activeClinica(clinica:Clinica): void{
-    const bool = window.confirm();
+    const bool = window.confirm('Deseja abrir a clinica de novo?');
     if(bool) this.clinicasService.active(clinica).subscribe((response) => console.log(response));
   }
 
