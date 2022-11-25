@@ -33,5 +33,4 @@ export class HomeComponent implements OnInit {
     const bool = window.confirm('Deseja abrir a clinica de novo?');
     if(bool) this.clinicasService.active(clinica).subscribe((response) => console.log(response));
   }
-
 }

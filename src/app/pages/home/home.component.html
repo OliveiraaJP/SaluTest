@@ -1,26 +1,26 @@
 <table mat-table [dataSource]="clinicas$" class="mat-elevation-z8">
   <ng-container matColumnDef="nome">
-    <th mat-header-cell *matHeaderCellDef>Nome</th>
+    <th mat-header-cell *matHeaderCellDef class="rosa">Nome</th>
     <td mat-cell *matCellDef="let clinica">{{ clinica.nome }}</td>
   </ng-container>
   <ng-container matColumnDef="especialidade">
-    <th mat-header-cell *matHeaderCellDef>Especialidade</th>
+    <th mat-header-cell *matHeaderCellDef class="rosa">Especialidade</th>
     <td mat-cell *matCellDef="let clinica">{{ clinica.especialidade }}</td>
   </ng-container>
   <ng-container matColumnDef="endereço">
-    <th mat-header-cell *matHeaderCellDef>Endereço</th>
+    <th mat-header-cell *matHeaderCellDef class="rosa">Endereço</th>
     <td mat-cell *matCellDef="let clinica">
       {{ clinica["endereço"] }}, {{ clinica.numero }} - {{ clinica.estado }}
     </td>
   </ng-container>
   <ng-container matColumnDef="status">
-    <th mat-header-cell *matHeaderCellDef>Disponível</th>
+    <th mat-header-cell *matHeaderCellDef class="rosa">Disponível</th>
     <td mat-cell *matCellDef="let clinica">
       <mat-icon aria-hidden="false" aria-label="Status icon">{{clinica.status | status}}</mat-icon>
     </td>
   </ng-container>
   <ng-container matColumnDef="horário">
-    <th mat-header-cell *matHeaderCellDef>Horário</th>
+    <th mat-header-cell *matHeaderCellDef class="rosa">Horário</th>
     <td mat-cell *matCellDef="let clinica">
       {{clinica.atendimento. inicio}} - {{clinica.atendimento.fim}}
     </td>
