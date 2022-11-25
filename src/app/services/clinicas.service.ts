@@ -21,6 +21,10 @@ export class ClinicasService {
     return this.http.put<any>(this.apiUrl + `/${clinica.id}`, body);
   }
 
+  postClinica(clinica: Clinica): Observable<Clinica>{
+    return this.http.post<Clinica>(this.apiUrl, clinica)
+  }
+
   active(clinica:Clinica): Observable<any>{
     const body = clinica;
     body.status = "Ativo";
