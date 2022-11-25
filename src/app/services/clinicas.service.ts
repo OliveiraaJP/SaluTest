@@ -7,11 +7,23 @@ import { Clinica } from '../types/Clinica';
   providedIn: 'root'
 })
 export class ClinicasService {
-  private apiUrl = 'http://localhost:3000/clinicas'
+  readonly apiUrl = 'http://localhost:3000/clinicas'
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Clinica[]>{
+  getAll(): Observable<Clinica[]> {
     return this.http.get<Clinica[]>(this.apiUrl);
+  }
+
+  delete(clinica: Clinica): Observable<any> {
+    const body = clinica;
+    body.status = "Inativo";
+    return this.http.put<any>(this.apiUrl + `/${clinica.id}`, body);
+  }
+
+  active(clinica:Clinica): Observable<any>{
+    const body = clinica;
+    body.status = "Ativo";
+    return this.http.put<any>(this.apiUrl + `/${clinica.id}`, body);
   }
 }
