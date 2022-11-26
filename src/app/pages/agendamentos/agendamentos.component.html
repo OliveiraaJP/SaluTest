@@ -1,1 +1,13 @@
-<p>agendamentos works!</p>
+<div class="container">
+  <h1>
+    Clinica: <span class="rosa"> {{ clinicaName.nome }}</span> ---  Especialidade: <span class="rosa">{{clinicaName.especialidade}}</span>
+  </h1>
+  <div *ngIf="agendamentos.length === 0" class="none">
+    Sem pacientes registrados nesta clínica :(
+  </div>
+    <div *ngFor="let agendamento of agendamentos" class="pacienteBox">
+      <div matListItemTitle>paciente: {{ agendamento.paciente }}</div>
+      <div matListItemLine>{{ agendamento.dia }} - {{ agendamento.hora }}</div>
+    </div>
+
+</div>

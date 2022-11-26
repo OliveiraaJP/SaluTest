@@ -15,6 +15,10 @@ export class ClinicasService {
     return this.http.get<Clinica[]>(this.apiUrl);
   }
 
+  getOne(id: string): Observable<Clinica[]> {
+    return this.http.get<Clinica[]>(this.apiUrl + `/${id}`);
+  }
+
   delete(clinica: Clinica): Observable<any> {
     const body = clinica;
     body.status = "Inativo";

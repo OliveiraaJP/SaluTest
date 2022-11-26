@@ -1,0 +1,32 @@
+/* .container{
+    padding-left: 45px;
+} */
+
+.rosa{
+    color: #ef5984;
+    font-size: 1.3em;
+}
+mat-list{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    padding-left: 30px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.none{
+    padding-left: 30px;
+    font-size: 1.3em;
+}
+
+.pacienteBox{
+    font-size: 1.5em;
+    height: 100px;
+    border: 1px solid black;
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
