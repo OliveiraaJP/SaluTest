@@ -17,6 +17,7 @@ import { CreateDialogComponent } from './components/create-dialog/create-dialog.
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StatusPipe } from './pipes/status.pipe';
+import { AgendamentosComponent } from './pages/agendamentos/agendamentos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { StatusPipe } from './pipes/status.pipe';
     HeaderComponent,
     HomeComponent,
     StatusPipe,
-    CreateDialogComponent
+    CreateDialogComponent,
+    AgendamentosComponent
   ],
   imports: [
     BrowserModule,
