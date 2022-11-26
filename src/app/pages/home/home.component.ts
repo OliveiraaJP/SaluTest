@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { CreateDialogComponent } from 'src/app/components/create-dialog/create-dialog.component';
 import { ClinicasService } from 'src/app/services/clinicas.service';
 import { Clinica } from 'src/app/types/Clinica';
+
 
 @Component({
   selector: 'app-home',
@@ -16,7 +18,7 @@ export class HomeComponent implements OnInit {
   displayedColumns: string[] = ['nome', 'especialidade', 'endereço', 'status', 'horário', 'actions'];
 
 
-  constructor(private clinicasService: ClinicasService,public dialog: MatDialog) {
+  constructor(private clinicasService: ClinicasService,public dialog: MatDialog, private route: Router) {
     this.getClinicas();
   }
 
@@ -49,5 +51,9 @@ export class HomeComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result =>{
       console.log('object');
     })
+  }
+
+  navigate(idClinica: number):void{
+    this.route.navigate(['agendamentos', idClinica])
   }
 }

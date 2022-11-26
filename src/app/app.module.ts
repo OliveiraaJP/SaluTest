@@ -15,8 +15,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CreateDialogComponent } from './components/create-dialog/create-dialog.component';
 import { HeaderComponent } from './components/header/header.component';
+import { AgendamentosComponent } from './pages/agendamentos/agendamentos.component';
 import { HomeComponent } from './pages/home/home.component';
 import { StatusPipe } from './pipes/status.pipe';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { StatusPipe } from './pipes/status.pipe';
     HeaderComponent,
     HomeComponent,
     StatusPipe,
-    CreateDialogComponent
+    CreateDialogComponent,
+    AgendamentosComponent
   ],
   imports: [
     BrowserModule,
