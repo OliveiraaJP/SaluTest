@@ -1,6 +1,6 @@
 <p align="center">
   <h1 align="center">
-    SALUTeste João Paulo
+    SALU Teste João Paulo
   </h1>
 </p>
 
