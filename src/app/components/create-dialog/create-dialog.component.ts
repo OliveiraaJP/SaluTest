@@ -32,8 +32,6 @@ export class CreateDialogComponent implements OnInit {
       preço: ['', [Validators.required]],
       inicio: ['', [Validators.required]],
       fim: ['', [Validators.required]]
-      
-
     });
   }
 

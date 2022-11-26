@@ -38,7 +38,7 @@
       </button>
     </th>
     <td mat-cell *matCellDef="let clinica">
-      <button mat-icon-button color="accent" aria-label="Editar uma clinica">
+      <button mat-icon-button (click)="editDialog(clinica)" color="accent" aria-label="Editar uma clinica">
         <mat-icon>edit</mat-icon>
       </button>
       <button *ngIf="clinica.status.toLowerCase() === 'ativo'" (click)="deleteClinica(clinica)" mat-icon-button color="warn" aria-label="Remover uma clinica">

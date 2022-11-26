@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { CreateDialogComponent } from 'src/app/components/create-dialog/create-dialog.component';
+import { UpdateDialogComponent } from 'src/app/components/update-dialog/update-dialog.component';
 import { ClinicasService } from 'src/app/services/clinicas.service';
 import { Clinica } from 'src/app/types/Clinica';
 
@@ -44,6 +45,18 @@ export class HomeComponent implements OnInit {
 
   openDialog(): void{
     const dialogRef = this.dialog.open(CreateDialogComponent, {
+      width:'75%'
+    });
+    dialogRef.afterClosed().subscribe(result =>{
+      console.log('object');
+    })
+  }
+
+  editDialog(clinica: Clinica): void{
+    const dialogRef = this.dialog.open(UpdateDialogComponent, {
+      data:{
+        clinica
+      },
       width:'75%'
     });
     dialogRef.afterClosed().subscribe(result =>{

@@ -11,6 +11,10 @@ export class ClinicasService {
 
   constructor(private http: HttpClient) { }
 
+  get(id: number): Observable<Clinica>{
+    return this.http.get<Clinica>(this.apiUrl+ `/${id}`)
+  }
+
   getAll(): Observable<Clinica[]> {
     return this.http.get<Clinica[]>(this.apiUrl);
   }
@@ -23,6 +27,10 @@ export class ClinicasService {
 
   postClinica(clinica: any): Observable<Clinica>{
     return this.http.post<Clinica>(this.apiUrl, clinica)
+  }
+
+  updateClinica(clinica: any): Observable<Clinica>{
+    return this.http.put<Clinica>(this.apiUrl + `/${clinica.id}`, clinica)
   }
 
   active(clinica:Clinica): Observable<any>{
