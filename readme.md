@@ -24,7 +24,7 @@ $ git clone https://github.com/OliveiraaJP/SaluTest.git
 
 $ cd SaluTest/
 
-$npm i
+$ npm i
 ```
 - Na pasta do projeto rode em 2 terminais separados
 ```bash
